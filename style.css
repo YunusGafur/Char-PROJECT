@@ -149,7 +149,7 @@ h1{
 /* Fade in subtitle */
 @keyframes fadeIn{
     from{
-        opacity: 0.2;
+        opacity: 0;
         transform: translateY(20px);
     }
     to{
@@ -165,11 +165,144 @@ h1{
 
 @keyframes cardAppear{
     from{
-        opacity: 0.2;
+        opacity: 0;
         transform: translateY(30px);
     }
     to{
-        opacity: 0.5;
+        opacity: 0.7;
         transform: translateY(0);
     }
+}
+
+/* Ship Selection Buttons */
+
+.btn-primary{
+    background: linear-gradient(135deg, #00d4ff, #0066ff);
+    border: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    border-radius: 30px;
+
+    transition: all 0.3s ease;
+    box-shadow:
+        0 0 10px rgba(0, 212, 255, 0.5),
+        0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.btn-primary:hover{
+    transform: translateY(-4px) scale(1.05);
+
+    box-shadow:
+        0 0 15px #00d4ff,
+        0 0 30px #00d4ff,
+        0 0 45px #00d4ff;
+}
+
+/* Method Buttons */
+
+.btn-success,
+.btn-info,
+.btn-warning{
+    border: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+/* Price Category Button */
+
+.btn-success{
+    background: linear-gradient(135deg, #00ff9d, #00b86b);
+
+    box-shadow:
+        0 0 10px rgba(0,255,157,.5),
+        0 0 20px rgba(0,255,157,.3);
+}
+
+.btn-success:hover{
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 15px #00ff9d,
+        0 0 30px #00ff9d,
+        0 0 45px #00ff9d;
+}
+
+/* Display Info Button */
+
+.btn-info{
+    background: linear-gradient(135deg, #00e1ff, #008cff);
+    color: white;
+
+    box-shadow:
+        0 0 10px rgba(0,225,255,.5),
+        0 0 20px rgba(0,225,255,.3);
+}
+
+.btn-info:hover{
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 15px #00e1ff,
+        0 0 30px #00e1ff,
+        0 0 45px #00e1ff;
+}
+
+/* Fuel Type Button */
+
+.btn-warning{
+    background: linear-gradient(135deg, #ffd000, #ff8400);
+    color: white;
+
+    box-shadow:
+        0 0 10px rgba(255,208,0,.5),
+        0 0 20px rgba(255,208,0,.3);
+}
+
+.btn-warning:hover{
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 15px #ffd000,
+        0 0 30px #ffd000,
+        0 0 45px #ffd000;
+}
+
+/* Button Click Effect */
+
+.btn{
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+
+/* Optional futuristic border animation */
+
+.btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+
+    transition: 0.6s;
+}
+
+.btn:hover::before{
+    left: 100%;
 }
