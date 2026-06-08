@@ -4,126 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Character Project</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
 <body>
 
-    <div class="stars"></div>
+<div id="space-bg">
+    <canvas id="spaceCanvas"></canvas>
+</div>
 
-    <div class="container py-5">
+<!-- BACKGROUND LAYERS -->
+<div class="matrix-bg"></div>
+<div class="space-grain"></div>
+<div class="scanlines"></div>
 
-        <!-- Header -->
-        <div class="hero text-center mb-5">
-            <h1 class="main-title">🚀 Galactic Starship Marketplace 🚀</h1>
-            <p class="subtitle">
-                Explore the Finest Spacecraft From Across the Universe
-            </p>
-        </div>
+<div class="command-os">
 
-        <!-- Ship Selection -->
-        <div class="text-center mb-4">
+    <header class="market-header">
+        <h1 class="main-title">GALACTIC COMMAND OS</h1>
+        <p class="subtitle">Starship Control & Fleet Management Terminal</p>
+    </header>
 
-            <h3>Select a Starship</h3>
-
-            <button class="btn btn-primary m-2">
-                Nova X1
-            </button>
-
-            <button class="btn btn-primary m-2">
-                Falcon GT
-            </button>
-
-            <button class="btn btn-primary m-2">
-                FreightMaster 9000
-            </button>
-
-            <button class="btn btn-primary m-2">
-                Voyager Elite
-            </button>
-
-            <button class="btn btn-primary m-2">
-                Interceptor V-77
-            </button>
-
-        </div>
-
-        <!-- Main Display Area -->
-        <div class="ship-card mx-auto">
-
-            <img
-                id="photo"
-                src="https://via.placeholder.com/800x400?text=Select+A+Spaceship"
-                alt="Spaceship"
-            >
-
-            <div class="p-4">
-
-                <h2 id="shipTitle">No Spaceship Selected</h2>
-
-                <hr>
-
-                <p><strong>Make:</strong> <span id="make">---</span></p>
-
-                <p><strong>Model:</strong> <span id="model">---</span></p>
-
-                <p><strong>Year:</strong> <span id="year">---</span></p>
-
-                <p><strong>Category:</strong> <span id="category">---</span></p>
-
-                <p><strong>Color:</strong> <span id="color">---</span></p>
-
-                <p><strong>Price:</strong> <span id="price">---</span></p>
-
-                <p><strong>Fuel Type:</strong> <span id="fuelType">---</span></p>
-
-                <p><strong>Horsepower:</strong> <span id="horsepower">---</span></p>
-
-                <p><strong>Seating Capacity:</strong> <span id="seatingCapacity">---</span></p>
-
-                <hr>
-
-                <!-- Methods Section -->
-
-                <h3>Ship Functions</h3>
-
-                <div class="method-buttons">
-
-                    <button class="btn btn-success m-2">
-                        Get Price Category
-                    </button>
-
-                    <button class="btn btn-info m-2">
-                        Display Full Information
-                    </button>
-
-                    <button class="btn btn-warning m-2">
-                        Show Fuel Type
-                    </button>
-
-                </div>
-
-                <hr>
-
-                <!-- Method Output Area -->
-
-                <h3>Display Area</h3>
-
-                <div id="outputArea" class="output-box">
-                    Results from methods will appear here.
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="status-bar">
+        <div class="status-item">DATABASE: ONLINE</div>
+        <div class="status-item">FLEET: 5 ACTIVE SHIPS</div>
+        <div class="status-item">SYSTEM: STABLE</div>
     </div>
 
-</body>
+    <div class="dashboard">
+
+        <aside class="ship-list">
+            <h3>STARSHIP INDEX</h3>
+            <button class="ship-btn">Nova X1</button>
+            <button class="ship-btn">Falcon GT</button>
+            <button class="ship-btn">Voyager Elite</button>
+            <button class="ship-btn">Interceptor V-77</button>
+            <button class="ship-btn">FreightMaster 9000</button>
+        </aside>
+
+        <section class="ship-display">
+
+            <img id="photo"
+                 src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1400&q=80"
+                 alt="Starship Image">
+
+            <div class="ship-data">
+                <h2 id="shipTitle">AWAITING COMMAND INPUT</h2>
+
+                <div class="info-grid">
+                    <div><strong>Make</strong><span id="make">---</span></div>
+                    <div><strong>Model</strong><span id="model">---</span></div>
+                    <div><strong>Year</strong><span id="year">---</span></div>
+                    <div><strong>Category</strong><span id="category">---</span></div>
+                    <div><strong>Color</strong><span id="color">---</span></div>
+                    <div><strong>Price</strong><span id="price">---</span></div>
+                    <div><strong>Fuel Type</strong><span id="fuelType">---</span></div>
+                    <div><strong>Horsepower</strong><span id="horsepower">---</span></div>
+                    <div><strong>Seating Capacity</strong><span id="seatingCapacity">---</span></div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <section class="functions-panel">
+        <h2>COMMAND FUNCTIONS</h2>
+
+        <div class="function-buttons">
+            <button class="method-btn">Get Price Category</button>
+            <button class="method-btn">Display Full Information</button>
+            <button class="method-btn">Show Fuel Type</button>
+        </div>
+    </section>
+
+    <section class="terminal">
+        <h3>TERMINAL OUTPUT</h3>
+        <div id="outputArea">> SYSTEM READY... AWAITING USER INPUT</div>
+    </section>
+
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="java.js"></script>
+
 </body>
 </html>
